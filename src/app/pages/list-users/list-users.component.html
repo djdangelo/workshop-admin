@@ -1,0 +1,46 @@
+<app-page-title [title]="titlePage"></app-page-title>
+<nb-card>
+  <nb-card-header>
+    <div class="row justify-content-end align-content-center">
+      <div class="col-6">Data - user</div>
+      <div class="col-6 text-right">
+        <button nbButton status="success" nbTooltip="Agregar nuevo usuario" nbTooltipIcon="info-outline" (click)="addNewUser()" ><nb-icon icon="person-add-outline"></nb-icon></button>
+      </div>
+    </div>
+  </nb-card-header>
+  <nb-card-body>
+    <input type="text" [(ngModel)]="searchName" (ngModelChange)="searchByName()"  placeholder="Buscar..." class="form-control col-12">
+    <br>
+    <br>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">NOMBRE</th>
+        <th scope="col">CORREO ELECTRONICO</th>
+        <th scope="col">DESCRIPCION</th>
+        <th scope="col">TELEFONO</th>
+        <th scope="col">ACCIONES</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of sharedService.listUser | paginate: { itemsPerPage: 3, currentPage: page, totalItems: sharedService.totalUser} | orderBy: key: reverse">
+        <th scope="row">{{ item.id_user }}</th>
+        <td>{{ item.name }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.description }}</td>
+        <td>{{ item.phone_number }}</td>
+        <td>
+          <button nbButton status="warning" nbTooltip="Editar usuario" nbTooltipIcon="info-outline" class="mr-1" (click)="updateUser(item, item.id_user)"><nb-icon icon="edit-outline"></nb-icon></button>
+          <button nbButton status="danger" nbTooltip="Eliminar usuario" nbTooltipIcon="info-outline" class="mr-1" (click)="deleteUser(item.id_user)"><nb-icon icon="trash-2-outline" ></nb-icon></button>
+        </td>
+      </tr>
+      <tr *ngIf="sharedService.isEmptyUser">
+        <th colspan="5">No hay usuarios registrados.</th>
+      </tr>
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="page = $event" ></pagination-controls>
+  </nb-card-body>
+</nb-card>
+

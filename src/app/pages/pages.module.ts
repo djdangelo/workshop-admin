@@ -11,12 +11,14 @@ import {Ng2OrderModule} from "ng2-order-pipe";
 import {FormsModule} from "@angular/forms";
 import { BasePageComponent } from './base-page/base-page.component';
 import { HomeComponent } from './home/home.component';
+import { ListUsersComponent } from './list-users/list-users.component';
 
 
 @NgModule({
   declarations: [
     BasePageComponent,
-    HomeComponent
+    HomeComponent,
+    ListUsersComponent
   ],
   imports: [
     CommonModule,
@@ -32,6 +34,7 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     NbTooltipModule,
     NbIconModule,
+    ComponentsModule,
   ]
 })
 export class PagesModule { }

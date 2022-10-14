@@ -1,0 +1,8 @@
+<nb-card>
+  <nb-card-header class="text-center">Información</nb-card-header>
+  <nb-card-body>{{textBody}}</nb-card-body>
+  <nb-card-footer>
+    <button class="cancel mr-1" nbButton status="danger" (click)="closeDialog()">Cancelar</button>
+    <button nbButton status="success" [disabled]="btnDisabled" (click)="submit()">Aceptar</button>
+  </nb-card-footer>
+</nb-card>

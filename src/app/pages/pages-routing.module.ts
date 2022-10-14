@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import {BasePageComponent} from "./base-page/base-page.component";
 import {HomeComponent} from "./home/home.component";
 import {NoFoundComponent} from "../no-found/no-found.component";
+import {ListUsersComponent} from "./list-users/list-users.component";
 
 const routes: Routes = [
   {
     path: '', component: BasePageComponent,
     children: [
       { path: '', component: HomeComponent },
+      { path: 'list-users', component: ListUsersComponent, data: { title: 'Lista de usuarios' } },
       { path: '**', component: NoFoundComponent }
     ]
   }
