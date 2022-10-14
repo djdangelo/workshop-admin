@@ -3,14 +3,34 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NoFoundComponent } from './no-found/no-found.component';
+import {NbButtonModule, NbCardModule, NbDialogModule, NbToastrModule} from "@nebular/theme";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ThemeModule} from "./theme/theme.module";
+
+const componentsOfNebular = [
+  NbCardModule,
+  NbButtonModule,
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NoFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    componentsOfNebular,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    NbToastrModule.forRoot(),
+    NbDialogModule.forRoot(),
+    ThemeModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
