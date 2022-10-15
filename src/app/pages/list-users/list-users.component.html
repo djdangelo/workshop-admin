@@ -24,7 +24,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let item of sharedService.listUser | paginate: { itemsPerPage: 3, currentPage: page, totalItems: sharedService.totalUser} | orderBy: key: reverse">
+      <tr *ngFor="let item of sharedService.listUser | paginate: { itemsPerPage: 3, currentPage: page, totalItems: sharedService.totalUser}">
         <th scope="row">{{ item.id_user }}</th>
         <td>{{ item.name }}</td>
         <td>{{ item.email }}</td>

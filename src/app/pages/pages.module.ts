@@ -7,7 +7,6 @@ import {NgxPaginationModule} from "ngx-pagination";
 import {ThemeModule} from "../theme/theme.module";
 import {ComponentsModule} from "../components/components.module";
 import {Ng2SearchPipeModule} from "ng2-search-filter";
-import {Ng2OrderModule} from "ng2-order-pipe";
 import {FormsModule} from "@angular/forms";
 import { BasePageComponent } from './base-page/base-page.component';
 import { HomeComponent } from './home/home.component';
@@ -31,7 +30,6 @@ import { NotificationsComponent } from './notifications/notifications.component'
     NgxPaginationModule,
     Ng2SearchPipeModule,
     NbListModule,
-    Ng2OrderModule,
     NbButtonModule,
     ComponentsModule,
     FormsModule,
