@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  base_url_api: 'http://localhost:5000/workshop-server/'
+  base_url_api: 'https://app-workshop-server.herokuapp.com/workshop-server/'
 };
 
 /*

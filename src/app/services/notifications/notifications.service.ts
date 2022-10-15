@@ -14,7 +14,7 @@ export class NotificationsService {
   constructor(
   ) { }
   setupSocketConnection(id: any) {
-    this.socket = io('http://localhost:5000/', { extraHeaders: { 'my-id': `${id}` } });
+    this.socket = io('https://app-workshop-server.herokuapp.com/', { extraHeaders: { 'my-id': `${id}` } });
   }
   getPublicNotifications() {
     this.socket.on('list-notifications', (data: NotificationsInterface) => {
