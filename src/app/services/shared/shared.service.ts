@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {UsersInterface} from "../../interface/users/users.interface";
 import {UsersService} from "../users/users.service";
 import {MessagesAppService} from "../messages-app/messages-app.service";
@@ -29,5 +29,8 @@ export class SharedService {
         return this.messageAppService.showMessage(error.error.message, 'danger', 'Error');
       }
     );
+  }
+  getIsAuth() {
+    return localStorage.getItem('id');
   }
 }

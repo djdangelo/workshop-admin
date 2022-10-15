@@ -1,0 +1,56 @@
+<app-page-title [title]="titlePage"></app-page-title>
+<nb-card>
+  <nb-card-header>
+    <div class="row justify-content-end align-content-center">
+      <div class="col-6">Notificaciones</div>
+      <div class="col-6 text-right">
+        <button nbButton status="success" class="mr-2" nbTooltip="Crear notificacion pública" nbTooltipIcon="info-outline" (click)="createPublicNotification()"><nb-icon icon="plus-circle-outline"></nb-icon></button>
+        <button nbButton status="info" nbTooltip="Crear notificacion privada" nbTooltipIcon="info-outline" (click)="createPrivateNotification()"><nb-icon icon="plus-circle-outline"></nb-icon></button>
+      </div>
+    </div>
+  </nb-card-header>
+  <nb-card-body>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card">
+          <h5 class="card-header">Notificaciones públicas</h5>
+          <div class="card-body">
+            <nb-list>
+              <nb-list-item *ngFor="let item of this.notificationsService.publicNotifications">
+                <div class="col-sm-12">
+                  <h6 class="font-weight-bold">{{ item.title }}</h6>
+                  <p class="card-subtitle">{{ item.bodyContent }}</p>
+                </div>
+              </nb-list-item>
+              <nb-list-item *ngIf="this.notificationsService.publicNotiEmpty">
+                <div class="col-sm-12">
+                  <h6 class="font-weight-bold">No hay notificaciones disponibles.</h6>
+                </div>
+              </nb-list-item>
+            </nb-list>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <h5 class="card-header">Notificaciones privadas</h5>
+          <div class="card-body">
+            <nb-list>
+              <nb-list-item *ngFor="let item of this.notificationsService.privateNotifications">
+                <div class="col-sm-12">
+                  <h6 class="font-weight-bold">{{ item.title }}</h6>
+                  <p class="card-subtitle">{{ item.bodyContent }}</p>
+                </div>
+              </nb-list-item>
+              <nb-list-item *ngIf="this.notificationsService.privateNotiEmpty">
+                <div class="col-sm-12">
+                  <h6 class="font-weight-bold">No hay notificaciones disponibles.</h6>
+                </div>
+              </nb-list-item>
+            </nb-list>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>

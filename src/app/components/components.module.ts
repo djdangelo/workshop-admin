@@ -12,6 +12,8 @@ import {
 import { FormUsersComponent } from './form-users/form-users.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { ConfirmComponent } from './confirm/confirm.component';
+import { FormAuthSocketComponent } from './form-auth-socket/form-auth-socket.component';
+import { FormNotificationsComponent } from './form-notifications/form-notifications.component';
 
 
 
@@ -19,7 +21,9 @@ import { ConfirmComponent } from './confirm/confirm.component';
   declarations: [
     PageTitleComponent,
     FormUsersComponent,
-    ConfirmComponent
+    ConfirmComponent,
+    FormAuthSocketComponent,
+    FormNotificationsComponent
   ],
   imports: [
     CommonModule,

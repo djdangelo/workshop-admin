@@ -4,6 +4,7 @@ import {BasePageComponent} from "./base-page/base-page.component";
 import {HomeComponent} from "./home/home.component";
 import {NoFoundComponent} from "../no-found/no-found.component";
 import {ListUsersComponent} from "./list-users/list-users.component";
+import {NotificationsComponent} from "./notifications/notifications.component";
 
 const routes: Routes = [
   {
@@ -11,6 +12,7 @@ const routes: Routes = [
     children: [
       { path: '', component: HomeComponent },
       { path: 'list-users', component: ListUsersComponent, data: { title: 'Lista de usuarios' } },
+      { path: 'notifications', component: NotificationsComponent, data: { title: 'Notificaciones - sockets' } },
       { path: '**', component: NoFoundComponent }
     ]
   }

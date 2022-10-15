@@ -1,0 +1,14 @@
+<nb-card>
+  <nb-card-header><b>{{ titleForm }}</b></nb-card-header>
+  <nb-card-body>
+    <form [formGroup]="formNotifications">
+      <input *ngIf="visibleFieldId" type="text" class="mb-3" nbInput fullWidth formControlName="id" placeholder="Para">
+      <input type="text" class="mb-3" nbInput fullWidth formControlName="title" placeholder="Titulo">
+      <input type="text" class="mb-3" nbInput fullWidth formControlName="bodyContent" placeholder="Contenido">
+    </form>
+  </nb-card-body>
+  <nb-card-footer>
+    <button nbButton status="danger" (click)="sendData(formNotifications.value)" [disabled]="formNotifications.invalid || btnDisabled">{{ btnLabel }}</button>
+    <button nbButton status="warning" class="ml-3" (click)="closeDialog()">Cancelar</button>
+  </nb-card-footer>
+</nb-card>

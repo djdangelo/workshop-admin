@@ -21,4 +21,18 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
     ],
   },
+  {
+    title: 'Sockets',
+    icon: 'bar-chart-2-outline',
+    children: [
+      {
+        title: 'Notificaciones',
+        link: 'notifications',
+      },
+      {
+        title: 'Bandas',
+        link: '',
+      },
+    ],
+  },
 ];
