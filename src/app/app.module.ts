@@ -9,7 +9,6 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ThemeModule} from "./theme/theme.module";
-import {SocketIoConfig, SocketIoModule} from "ngx-socket-io";
 import {NotificationsService} from "./services/notifications/notifications.service";
 
 const componentsOfNebular = [
@@ -17,7 +16,6 @@ const componentsOfNebular = [
   NbButtonModule,
 ];
 
-const config: SocketIoConfig = { url: 'http://localhost:5000/', options: {} };
 
 @NgModule({
   declarations: [
